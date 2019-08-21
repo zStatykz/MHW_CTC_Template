@@ -1,0 +1,66 @@
+struct FILE {
+    struct HEADER {
+        char    filetype[4] <name="File Type">;
+        int     unknownsConstantIntSet[3];
+        int     numARecords <name="Number of Bone Chains", bgcolor=0xffff56>;
+        int     numBRecords <name="Number of Bones", bgcolor=0xffff60>;
+        int     unknownConstantInt;
+        //float   unknownFloatSet[11] <bgcolor=0xff956b>;
+        float   updateTicks     <name="Update Ticks", comment="Keep 0.16666. Once every frame @ 60fps">;
+        float   poseSnapping    <name="Pose Snapping", bgcolor=0x56ffff, comment="Retention of the initial pose. Typically 1.0">;
+        float   chainDamping    <name="Spring/Damping", bgcolor=0x56aaff, comment="0 = springy, 1 = damp. Don't exceed 1.0">;
+        float   reactionSpeed   <name="Reaction Speed", bgcolor=0x5656ff, comment="Sensitivity to movement.">;
+        float   gravityMult     <name="Gravity Multiplier", bgcolor=0xaa56ff, comment="Can be negative. -1.0 to 1.0">;
+        float   windMultMid     <name="Wind Multiplier (Mid)", bgcolor=0xffaad4, comment="Power of average wind. 0 = Stiff">;
+        float   windMultLow     <name="Wind Multiplier (Low)", bgcolor=0xffaad4, comment="Power of weak winds. 0 = Stiff">;
+        float   windMultHigh    <name="Wind Multiplier (High)", bgcolor=0xffaad4, comment="Power of heavy winds. 0 = Stiff">;
+        float   unknownFloatSet[3];
+        byte    unknownByteSet[8];
+    } header <name="Header Definition", bgcolor=0x93671a>;
+    
+    struct ARECORD {
+        int     numRelatedBRecords <name="Chain Length", bgcolor=0x56ffff>;
+        byte    collision <name="Collision", comment="Usually a number between 0 and 10", bgcolor=0x56aaff>;
+        byte    weightiness <name="Weightiness", comment="Usually 7">;
+        byte    unknownByteSet[26];
+        float   xGravity <name="X Axis Gravity", bgcolor=0x5656ff, comment="10 = 1m/s^2, usually 0">;
+        float   yGravity <name="Y Axis Gravity", bgcolor=0x56ff56, comment="10 = 1m/s^2, -981 for normal gravity">;
+        float   zGravity <name="Z Axis Gravity", bgcolor=0xff5656, comment="10 = 1m/s^2, usually 0">;
+        float   unknownFloatOne <name="Always 0">;
+        float   xInertia <name="X Inertia", bgcolor=0x5656ff, comment="Usually a float between 0 and 1">;
+        float   yInertia <name="Y Inertia", bgcolor=0x56ff56, comment="Usually a float between 0 and 1">;
+        float   zInertia <name="Z Inertia", bgcolor=0xff5656, comment="Usually a float between 0 and 1">;
+        float   unknownFloatTwo <name="Always 100">;
+        float   unknownFloatThree <name="Always 0">;
+        float   unknownFloatFour <name="Always 0.1">;
+        float   windMultiplier <name="Wind Multiplier", bgcolor=0xbf8322, comment="Usually a float between 0 and 1">;
+        int     lod <bgcolor=0x263f2b>;
+    } arecord [ header.numARecords ] <name="Chain Definitions", bgcolor=0x263f2a>;
+    struct BRECORD {
+        //float   limitFloats[16];
+        struct LIMITFLOATS {
+            float   limitFloat0 <name="-X Max", bgcolor=0x0000ff, comment="Negative X axis maximum in radians">;
+            float   limitFloat1 <name="-Y Max", bgcolor=0x00ff00, comment="Negative Y axis maximum in radians">;
+            float   limitFloat2 <name="-Z Max", bgcolor=0xff0000, comment="Negative Z axis maximum in radians">;
+            float   limitFloat3 <name="World X", comment="Something to do with world space">;
+            float   limitFloat4 <name="Z Max", bgcolor=0xff5656, comment="Positive Z axis maximum in radians">;
+            float   limitFloat5 <name="Y Max", bgcolor=0x56ff56, comment="Positive Y axis maximum in radians">;
+            float   limitFloat6 <name="X Max", bgcolor=0x5656ff, comment="Positive X axis maximum in radians">;
+            float   limitFloat7 <name="World Y", comment="Something to do with world space">;
+            float   limitFloat8 <name="X Something", comment="Something along X(?)">;
+            float   limitFloat9 <name="Y Something", comment="Something along Y(?)">;
+            float   limitFloat10 <name="Z Something", comment="Something along Z(?)">;
+            float   limitFloat11 <name="World Z", comment="Something to do with world space">;
+            float   limitFloat12 <name="Unknown 1", comment="">;
+            float   limitFloat13 <name="Unknown 2", comment="">;
+            float   limitFloat14 <name="Unknown 3", comment="">;
+            float   limitFloat15 <name="Unknown 4", comment="Usually 1">;
+        } limitfloats <name="Limit Floats">;
+        byte    unknownByteSetOne[2];
+        byte    isParent <name="Is Parent of a chain">;
+        byte    unknownByteSetTwo[5];
+        int     boneFunctionID <name="Bone Function ID">;
+        byte    unknownByteSetThree[4];
+        float   unknownFloatSet[4] <bgcolor=0x8d56a5>;
+    } brecord [ header.numBRecords ] <name="Bones", bgcolor=0x4a2d56>;
+} file <name="CTC File">;
