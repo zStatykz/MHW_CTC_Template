@@ -1,0 +1,52 @@
+//------------------------------------------------
+//--- 010 Editor v9.0 Script File
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+//   History: 
+//------------------------------------------------
+//------------------------------------------------
+//--- 010 Editor v9.0 Script File
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+//   History: 
+//------------------------------------------------
+void InsertFloatOne(int offset){
+    InsertBytes( offset, 1, 0x3F);
+    InsertBytes( offset, 1, 0x80);
+    InsertBytes( offset, 1, 0x00);
+    InsertBytes( offset, 1, 0x00);
+};
+
+void InsertQuaternionMatrix(int offset){
+    local int i, j;
+    for (j=3; j>=0; j --){
+        for (i=3; i>=0; i--){
+            if (i == j)InsertFloatOne(offset);
+            else InsertBytes( offset, 4, 0x00);
+        }
+    }
+}
+
+local int offset;
+local int i;
+offset = 0x50 + file.header.numARecords * 0x50 + file.header.numBRecords * 0x60;
+
+for (i = 0; i<4; i++) InsertFloatOne(offset);//UnknFloat
+for (i = 0; i<4; i++) InsertBytes( offset, 1, 0x00);//UnknByte
+InsertBytes( offset, 4, 0x00);//BoneFunctionID
+for (i = 0; i<5; i++) InsertBytes( offset, 1, 0x01);//UnknByte
+if (file.arecord[file.header.numARecords-1].numRelatedBRecords == 0) InsertBytes( offset, 1, 0x00);//Parent of Chain
+else InsertBytes( offset, 1, 0x01);//Parent of Chain
+for (i = 0; i<2; i++) InsertBytes( offset, 1, 0x00);//UnknByte
+InsertQuaternionMatrix(offset);//floatLimits
+
+file.header.numBRecords += 1;
+file.arecord[file.header.numARecords-1].numRelatedBRecords += 1;
