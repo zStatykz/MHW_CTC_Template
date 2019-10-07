@@ -1,0 +1,37 @@
+//------------------------------------------------
+//--- 010 Editor v9.0 Script File
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+//   History: 
+//------------------------------------------------
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//lod
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//Wind Multiplier
+
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0x3D);
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0xCC);
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0xCC);
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0xCD);
+
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);
+
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0x42);
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0xC8);
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0x00);
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0x00);
+
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//Z Inertia
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//Y Inertia
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//X Intertia
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//Z Axis Gravity
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//Y Axis Gravity
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//X Axis Gravity
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 26*1, 0);//UnknownBytes
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 7);//Weightiness
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 1, 0);//Collision
+InsertBytes( 0x50 + file.header.numARecords * 0x50, 4, 0);//ChainLength
+file.header.numARecords += 1;
