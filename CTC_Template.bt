@@ -33,9 +33,9 @@ struct ARECORD {
     float   yGravity <name="Y Axis Gravity", bgcolor=0x56ff56, comment="10 = 1m/s^2, -981 for normal gravity">;
     float   zGravity <name="Z Axis Gravity", bgcolor=0xff5656, comment="10 = 1m/s^2, usually 0">;
     float   unknownFloatOne <name="Always 0">;
-    float   xInertia <name="X Inertia", bgcolor=0x5656ff, comment="Usually a float between 0 and 1">;
-    float   yInertia <name="Y Inertia", bgcolor=0x56ff56, comment="Usually a float between 0 and 1">;
-    float   zInertia <name="Z Inertia", bgcolor=0xff5656, comment="Usually a float between 0 and 1">;
+    float   poseSnapping <name="Pose Snapping", bgcolor=0x5656ff, comment="Retention of T-pose. High values 'disable' physics. 0 stops the bone from 'bouncing'">;
+    float   coneOfMotion <name="Cone of Motion", bgcolor=0x56ff56, comment="Level of movement allowed. Mostly noticeable when jumping from heights.">;
+    float   tensionDamp <name="Damping/Spring", bgcolor=0xff5656, comment="Higher values = more tension. Like a coiled doorstop.">;
     float   unknownFloatTwo <name="Always 100">;
     float   unknownFloatThree <name="Always 0">;
     float   unknownFloatFour <name="Always 0.1">;
