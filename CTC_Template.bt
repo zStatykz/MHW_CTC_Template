@@ -35,7 +35,7 @@ struct ARECORD {
     float   unknownFloatOne <name="Always 0">;
     float   poseSnapping <name="Pose Snapping", bgcolor=0x5656ff, comment="Retention of T-pose. High values 'disable' physics. 0 stops the bone from 'bouncing'">;
     float   coneOfMotion <name="Cone of Motion", bgcolor=0x56ff56, comment="Level of movement allowed. Mostly noticeable when jumping from heights.">;
-    float   tensionDamp <name="Damping/Spring", bgcolor=0xff5656, comment="Higher values = more tension. Like a coiled doorstop.">;
+    float   tensionDamp <name="Tension", bgcolor=0xff5656, comment="Higher values = more tension. Like a coiled doorstop.">;
     float   unknownFloatTwo <name="Always 100">;
     float   unknownFloatThree <name="Always 0">;
     float   unknownFloatFour <name="Always 0.1">;
