@@ -14,3 +14,16 @@ To use it, follow these steps:
 6. The hex window should now be colored and a result window pops up to allow modification.
 
 Have fun!
+
+***
+ICEBORNE UPDATE:
+- Template now reads updated bones properly (they added a 16 byte line to the end of all bones)
+- Color coded important parts of bones.
+- Added section on bones for their collision radius.
+
+TO FIX YOUR OLD CTC FOR ICEBORNE:
+1) Open your .ctc with old template
+2) Change the 5th byte from 1B to 1C
+3) Add this line to the end of EVERY bone, DONT OVERWRITE
+00 00 80 3F CD CD CD CD CD CD CD CD CD CD CD CD
+4) Save and load the new template to check.
