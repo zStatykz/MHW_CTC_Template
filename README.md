@@ -21,7 +21,7 @@ ICEBORNE UPDATE:
 - Color coded important parts of bones.
 - Added section on bones for their collision radius.
 
-## TO FIX YOUR OLD CTC FOR ICEBORNE, USE KEEGAR'S AUTOMATED PATCHER FOUND HERE: https://github.com/keegars/CTC-Fixer
+## TO FIX YOUR OLD CTC FOR ICEBORNE, USE KEEGARS' AUTOMATED PATCHER FOUND HERE: https://github.com/keegars/CTC-Fixer
 
 _Thank you to Ice for finding the new hex!_
 
