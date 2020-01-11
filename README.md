@@ -24,7 +24,7 @@ ICEBORNE UPDATE:
 TO FIX YOUR OLD CTC FOR ICEBORNE:
 1) Open your .ctc with old template
 2) Change the 5th byte from 1B to 1C
-3) Add this line of hex to the end of EVERY bone, DONT OVERWRITE
+3) Add this line of hex to the end of EVERY bone (every 7th line down, insert with Ctrl+Shift+V), DONT OVERWRITE
 
 00 00 80 3F CD CD CD CD CD CD CD CD CD CD CD CD
 
