@@ -71,7 +71,8 @@ struct BRECORD {
     byte    unknownByteSetThree[4];
     float   boneColRadius <name="Bone Collison Radius", bgcolor=0x6060ff>;
     float   unknownFloatSet[3];
-    float   unknownFooter[4] <bgcolor=0x8d56a5>;
+    float   unknownBoneFloat <bgcolor=0x8d56a5>;
+    int   unknownByteSetFour[3] <bgcolor=0x8d56a5>;
 };
 
 struct FILE {
