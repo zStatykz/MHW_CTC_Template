@@ -31,3 +31,5 @@ TO FIX YOUR OLD CTC FOR ICEBORNE:
 Save and load the new template to check.
 
 ![Example image of new bones](https://cdn.discordapp.com/attachments/481188093123231764/665446423877255182/unknown.png)
+
+Thank you to Ice for finding the new hex!
