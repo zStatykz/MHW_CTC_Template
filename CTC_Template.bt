@@ -65,11 +65,13 @@ struct BRECORD {
         //float   limitFloat15 <name="Unknown 4", comment="Usually 1">;
     //} limitfloats <name="Limit Floats">;
     byte    unknownByteSetOne[2];
-    byte    isParent <name="Is Parent of a chain">;
+    byte    isParent <name="Is Parent of a chain", bgcolor=0xff60ff>;
     byte    unknownByteSetTwo[5];
-    int     boneFunctionID <name="Bone Function ID">;
+    int     boneFunctionID <name="Bone Function ID", bgcolor=0x60aaff>;
     byte    unknownByteSetThree[4];
-    float   unknownFloatSet[4] <bgcolor=0x8d56a5>;
+    float   boneColRadius <name="Bone Collison Radius", bgcolor=0x6060ff>;
+    float   unknownFloatSet[3];
+    float   unknownFooter[4] <bgcolor=0x8d56a5>;
 };
 
 struct FILE {
