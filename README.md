@@ -17,7 +17,7 @@ Have fun!
 
 ***
 ICEBORNE UPDATE:
-- Template now reads updated bones properly (they added a 16 byte line to the end of all bones)
+- Template now reads updated bones properly (they added a 16 byte line to the end of all bones and changed the 5th byte in the header)
 - Color coded important parts of bones.
 - Added section on bones for their collision radius.
 
