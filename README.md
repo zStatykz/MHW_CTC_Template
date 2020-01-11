@@ -21,22 +21,7 @@ ICEBORNE UPDATE:
 - Color coded important parts of bones.
 - Added section on bones for their collision radius.
 
-TO FIX YOUR OLD CTC FOR ICEBORNE:
-1) Open your .ctc with the new template
-2) Change the 5th byte from 1B to 1C
-3) Add this line of hex to the end of EVERY bone (every 7th line down, insert with Ctrl+Shift+V. For the most part, this should be on every pink line going down in order), DONT OVERWRITE
-
-00 00 80 3F CD CD CD CD CD CD CD CD CD CD CD CD
-
-Save and load the new template to check.
-
-![Example image of new bones](https://cdn.discordapp.com/attachments/481188093123231764/665446423877255182/unknown.png)
+## TO FIX YOUR OLD CTC FOR ICEBORNE, USE KEEGAR'S AUTOMATED PATCHER FOUND HERE: https://github.com/keegars/CTC-Fixer
 
 _Thank you to Ice for finding the new hex!_
 
-Something Ice wanted to point out:
-> Most of the time the end child bone has 00 00 80 3F (1.0)
-
-> However for the rest of the child bone they usually have 00 00 00 80 (-0.0), though this value varies with in 0-1?
-
-Putting that hex into every bone seems to be fine, but it might be good practice to replicate what iceborne .ctcs do.
