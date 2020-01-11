@@ -32,4 +32,11 @@ Save and load the new template to check.
 
 ![Example image of new bones](https://cdn.discordapp.com/attachments/481188093123231764/665446423877255182/unknown.png)
 
-Thank you to Ice for finding the new hex!
+_Thank you to Ice for finding the new hex!_
+
+Something Ice wanted to point out:
+> Most of the time the end child bone has 00 00 80 3F (1.0)
+
+> However for the rest of the child bone they usually have 00 00 00 80 (-0.0), though this value varies with in 0-1?
+
+Putting that hex into every bone seems to be fine, but it might be good practice to replicate what iceborne .ctcs do.
